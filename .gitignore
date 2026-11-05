@@ -1,0 +1,8 @@
+docs/korg/
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+.DS_Store
+*.local
