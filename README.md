@@ -12,6 +12,33 @@ leaves the browser.
 
 ---
 
+## Live site
+
+**<https://yakovkhalinsky.github.io/microkorg-xl-editor/>**
+
+The app is deployed to GitHub Pages automatically from `main` by
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push
+(the workflow can also be run manually via *Actions → Deploy to GitHub
+Pages*).
+
+- Web MIDI requires a **secure context**. Pages serves the app over **HTTPS**,
+  which satisfies that requirement (as does `http://localhost` for `npm run
+  dev`).
+- Use a **desktop** browser — **Chrome** or **Edge**. Safari and Firefox do
+  not implement Web MIDI, and mobile browsers generally do not expose
+  USB-MIDI devices.
+- Allow the **MIDI / SysEx** permission prompt when the app asks for it.
+- On **Windows 11**, use the built-in **class-compliant USB-MIDI** driver — do
+  not install the old Korg USB-MIDI driver. See
+  [Windows 11](#windows-11) below.
+
+The build is served from the project sub-path, so `vite.config.ts` sets
+`base: '/microkorg-xl-editor/'`. Asset URLs in `dist/` are prefixed with that
+path; a build made for a custom domain or a user/org Pages site needs the base
+changed accordingly.
+
+---
+
 ## Quick start
 
 ```bash
